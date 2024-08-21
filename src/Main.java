@@ -21,12 +21,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // while loop counter
-        int counter = 0;
         // scanner for user input
         Scanner input = new Scanner(System.in);
+
         // list of double values
         double[] list = new double[5];
+
+        // while loop counter
+        int counter = 0;
 
         // get input from user
         while (counter < 5){
@@ -40,21 +42,22 @@ public class Main {
         double max = 0;
         double min = 0;
         // for loop based on size of list
-        for (int i = 0; i < list.length; i += 1) {
+        for (double v : list) {
             // running count of total
-            total += list[i];
+            total += v;
             // checking for max value
-            if (list[i] > max) {
-                max = list[i];
+            if (v > max) {
+                max = v;
             }
             // checking for min value
-            if (list[i] < min){
-                min = list[i];
+            if (v < min) {
+                min = v;
             }
 
         }
         // display results
         System.out.println(total);
+        // calculate average
         System.out.println(total / 5);
         System.out.println(max);
         System.out.println(min);
