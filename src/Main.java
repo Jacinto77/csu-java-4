@@ -18,6 +18,7 @@ the results and GIT repository in a single document.
 */
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,15 +26,15 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         // list of double values
-        double[] list = new double[5];
+        ArrayList<Double> values = new ArrayList<>();
 
         // while loop counter
         int counter = 0;
 
         // get input from user
         while (counter < 5){
-            double userInput = input.nextDouble();
-            list[counter] = userInput;
+            Double userInput = input.nextDouble();
+            values.add(userInput);
             counter += 1;
         }
 
@@ -42,16 +43,16 @@ public class Main {
         double max = 0;
         double min = 0;
         // for loop based on size of list
-        for (double v : list) {
+        for (double value : values) {
             // running count of total
-            total += v;
+            total += value;
             // checking for max value
-            if (v > max) {
-                max = v;
+            if (value > max) {
+                max = value;
             }
             // checking for min value
-            if (v < min) {
-                min = v;
+            if (value < min) {
+                min = value;
             }
 
         }
