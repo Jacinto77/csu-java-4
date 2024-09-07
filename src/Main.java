@@ -1,5 +1,3 @@
-
-
 /*
 Option #1: Looping Construct with Floating Point Numbers
 
@@ -17,8 +15,7 @@ the results and GIT repository in a single document.
 
 */
 
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,8 +28,12 @@ public class Main {
         // while loop counter
         int counter = 0;
 
+        System.out.println("This program will take in 5 floating point numbers, then output calculations on those values.");
+
         // get input from user
         while (counter < 5){
+            System.out.println("Enter number " + (counter + 1) + ": ");
+            System.out.print("> ");
             Double userInput = input.nextDouble();
             values.add(userInput);
             counter += 1;
@@ -40,9 +41,9 @@ public class Main {
 
         // variables for use in next loop
         double total = 0;
-        double max = 0;
-        double min = 0;
-        // for loop based on size of list
+        double max = values.get(0);
+        double min = values.get(0);
+        // for loop based on size of list to find the minimum and maximum values, and sum of all values
         for (double value : values) {
             // running count of total
             total += value;
@@ -54,15 +55,27 @@ public class Main {
             if (value < min) {
                 min = value;
             }
-
         }
         // display results
-        System.out.println(total);
+        System.out.println();
+        System.out.println("Total: " + total);
         // calculate average
-        System.out.println(total / 5);
-        System.out.println(max);
-        System.out.println(min);
+        System.out.println("Average: " + total / 5);
+        System.out.println();
+        // maximum
+        values.sort(Comparator.reverseOrder());
+        System.out.println("Maximum: " + max);
+        System.out.println(values);
+        System.out.println();
+        // minimum
+        values.sort(Comparator.naturalOrder());
+        System.out.println("Minimum: " + min);
+        System.out.println(values);
+        System.out.println();
+
         // calculate additional 20% on total
-        System.out.println( total + ( total * 0.20 ));
+        double twentyPercent = total + total * 0.2;
+        System.out.println("20% interest on top of Total: " + twentyPercent);
+        System.out.println(total + " + ( " + total + " * 0.20 ) = " + twentyPercent);
     }
 }

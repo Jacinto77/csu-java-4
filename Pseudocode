@@ -1,0 +1,42 @@
+BEGIN
+    // Initialize scanner for user input
+    CREATE a scanner object for input
+
+    // Initialize an empty list to store floating-point values
+    CREATE an empty list called "values" to store floating-point numbers
+
+    // Initialize a counter for the while loop
+    SET counter to 0
+
+    // Loop to gather 5 floating-point numbers from the user
+    WHILE counter is less than 5 DO
+        PROMPT user to enter a floating-point number
+        READ user input and store it in "userInput"
+        ADD "userInput" to "values" list
+        INCREMENT counter by 1
+    END WHILE
+
+    // Initialize variables for total, max, and min
+    SET total to 0
+    SET max to 0
+    SET min to 0
+
+    // Loop through the "values" list
+    FOR each value in "values" DO
+        ADD value to total
+        IF value is greater than max THEN
+            SET max to value
+        END IF
+        IF value is less than min THEN
+            SET min to value
+        END IF
+    END FOR
+
+    // Display the results
+    PRINT "Total" followed by total
+    PRINT "Average" followed by total divided by 5
+    PRINT "Maximum" followed by max
+    PRINT "Minimum" followed by min
+    CALCULATE interest on total at 20%
+    PRINT "Interest on total at 20%" followed by total + (total * 0.20)
+END
